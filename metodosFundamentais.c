@@ -1,8 +1,8 @@
-/**
+ /**
  * File:   metodosFundamentais.c
  * Author: Danton Issler Rodrigues
  *
- * Created on March 29, 2019, 2:45 PM
+ * Created on April 6, 2019, 2:45 PM
  */
 
 #include <stdio.h>
@@ -13,7 +13,7 @@
 
 
 /** */
-void criaLista(Elem *li){
+Elem* criaLista(Elem *li){
     li->prox = NULL;
     li->ant = NULL;
 }
@@ -27,8 +27,8 @@ int listaVazia(Elem *li){
 }
 /** */
 void liberaLista(Elem *li){
+    li->ant = NULL;
     if(!listaVazia(li)){
-        Elem *antNo;
         Elem *proxNo;
         Elem *no;
         if(li->prox != NULL){
@@ -38,17 +38,20 @@ void liberaLista(Elem *li){
                 free(no);
                 no = proxNo;
             }
-        }else{
-            no = li->ant;
-            while(no != NULL){
-                antNo = no->ant;
-                free(no);
-                no = antNo;
-            }
         }
-        free(li);
-        exit(1);
         printf("Lista liberada!\n\n");
+    }
+}
+
+int encontraCliente(Elem *li, int conta){
+    Elem *aux = li->prox;
+    while(aux != NULL){
+        aux = li->prox;
+        if(aux->numeroConta == conta){
+            return 0;
+        }else{
+        return 1;
+        }
     }
 }
 
@@ -60,7 +63,7 @@ void tamanhoLista(Elem *li){
             aux = li->prox;
             cont++;
         }
-        printf("O tamanho do vetor é: ",cont,"!\n\n");
+        printf("Temos : ",cont," clientes cadastrados!\n\n");
     }else{
         printf("O tamanho da lista é ZERO!\n\n");
     }

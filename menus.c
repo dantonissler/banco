@@ -2,9 +2,8 @@
  * File:   menus.c
  * Author: Danton Issler Rodrigues
  *
- * Created on March 29, 2019, 2:45 PM
+ * Created on April 6, 2019, 2:45 PM
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "menus.h"
@@ -109,8 +108,8 @@ void opcaoAdicao(Elem *li, int op) {
             break;
         case 3:
             /**insereListaOrdenada(li, conta)*/
-            printf("informe a posicao: ");
-            scanf("%d", &opcao);
+//            printf("informe a posicao: ");
+//            scanf("%d", &opcao);
             insereListaOrdenada(li, opcao);
             /**Chamada da opção de adicionar elemento no inicio da lista*/
             break;
@@ -149,7 +148,10 @@ void opcaoRemocao(Elem *li, int op) {
             removeListaFim(li);
             break;
         case 3:
-            /**removeListaMeio(li, conta);*/
+            int conta;
+            printf("informe o numero da conta: ");
+            scanf("%d", &conta);
+            removeListaMeio(li, conta);
             break;
         default:
             printf("Comando invalido\n\n");
@@ -180,10 +182,13 @@ void opcaoConsulta(Elem *li, int op) {
             menuInicial();
             break;
         case 1:
-            insereListaInicio(li);
+            consultarTodosElementos(li);
             break;
         case 2:
-            insereListaFinal(li);
+            int conta;
+            printf("informe o numero da conta: ");
+            scanf("%d", &conta);
+            consultaListaCont(li, conta);
             break;
         case 3:
             /**insereListaOrdenada(li, conta);*/

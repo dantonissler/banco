@@ -1,8 +1,8 @@
 /**
- * File:   metodosFundamentais.c
+ * File:   metodosConsulta.c
  * Author: Danton Issler Rodrigues
  *
- * Created on March 29, 2019, 2:45 PM
+ * Created on April 6, 2019, 2:45 PM
  */
 
 #include <stdio.h>
@@ -12,32 +12,29 @@
 /**
 * Consultar 1 elemento da lista utilizando a posição do elemento.
 */
-void consultaListaPos(Elem *li, int posicao){
-//    if(li == NULL || pos <= 0) return 0;
-//    Elem *no = *li;
-//    int i =1;
-//    while(no != NULL && i <pos){
-//        no = no->prox;
-//        i++;
-//    }
-//    if(no == NULL) return 0;
-//    else{
-//        *al = no->dados;
-//        return 1;
-//    }
+void consultarTodosElementos(Elem *li){
+    Elem *aux = li->prox;
+    while(aux != NULL){
+        aux = li->prox;
+        printf("Numero da conta: ' =%i\n", li->numeroConta);
+        printf("Nome Cliente: ' =%i\n", li->nomeCliente);
+        printf("Saldo da conta: ' =%i\n", li->saldo);
+        printf("\n\n");
+    }
 }
 /**
 * Consultar 1 elemento da lista utilizando o numero da conta.
 */
 void consultaListaCont(Elem *li, int conta){
-//    if(li == NULL)return 0;
-//    Elem *no = *li;
-//    While(no != NULL && no->dados.numConta != conta){
-//    no = no->prox;
-//    }
-//    if(no == NULL) return 0;
-//    else{
-//        *al = no->dados;
-//        return 1;
-//    }
+    while(aux != NULL){
+        aux = li->prox;
+        if(encontraCliente(li, no->numeroConta)){
+            printf("Numero da conta: ' =%i\n", li->numeroConta);
+            printf("Nome Cliente: ' =%i\n", li->nomeCliente);
+            printf("Saldo da conta: ' =%i\n", li->saldo);
+            printf("\n\n");
+        break;
+        }
+    }
+
 }
