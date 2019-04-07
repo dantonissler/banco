@@ -2,7 +2,7 @@
  * File:   menus.c
  * Author: Danton Issler Rodrigues
  *
- * Created on April 6, 2019, 2:45 PM
+ * Created on April 6, 2019, 2:47 AM
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -25,7 +25,7 @@ int menuInicial(void){
     printf("4. Tamanho da lista\n");
     printf("5. Zerar lista\n");
     printf("|--------------------------|\n");
-    printf("Opcao:'= %i.\n ", opt);
+    //printf("Opcao:'= %i.\n ", opt);
     printf("Opcao: ");
     /** Captura da opção escolhida*/
     scanf("%d", &opt);
@@ -136,6 +136,7 @@ int menuRemocao(void){
 * pelo úsuario no menu inicial
 */
 void opcaoRemocao(Elem *li, int op) {
+    int conta;
     switch(op){
         case 0:
             /** Chama a tela do menu inicial*/
@@ -148,7 +149,7 @@ void opcaoRemocao(Elem *li, int op) {
             removeListaFim(li);
             break;
         case 3:
-            int conta;
+
             printf("informe o numero da conta: ");
             scanf("%d", &conta);
             removeListaMeio(li, conta);
@@ -176,6 +177,7 @@ int menuConsulta(void){
 * pelo úsuario no menu inicial
 */
 void opcaoConsulta(Elem *li, int op) {
+    int conta;
     switch(op){
         case 0:
             /** Chama a tela do menu inicial*/
@@ -185,7 +187,6 @@ void opcaoConsulta(Elem *li, int op) {
             consultarTodosElementos(li);
             break;
         case 2:
-            int conta;
             printf("informe o numero da conta: ");
             scanf("%d", &conta);
             consultaListaCont(li, conta);

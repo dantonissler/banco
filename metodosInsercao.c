@@ -2,14 +2,14 @@
  * File:   metodosInsercao.c
  * Author: Danton Issler Rodrigues
  *
- * Created on April 6, 2019, 2:45 PM
+ * Created on April 6, 2019, 2:47 AM
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "metodosFuntamentais.h"
 
-Elem* insereListaFinal(Elem* li){
+void insereListaFinal(Elem* li){
     int cont = 1;
     Elem *p = li;
     /**Não pode ter contas repitidas.*/
@@ -37,7 +37,6 @@ Elem* insereListaFinal(Elem* li){
         no->ant = p;
         p->prox = no;
         printf("Primeira posição preenchida\n");
-        return no;
     }else{
         while(p->prox != NULL){
             p = p->prox;
@@ -53,11 +52,10 @@ Elem* insereListaFinal(Elem* li){
         no->ant = p;
         p->prox = no;
         printf("Foi inserido o no ' = %i.\n", cont);
-        return no;
     }
 }
 /**Insere no ínicio*/
-Elem* insereListaInicio(Elem *li){
+void insereListaInicio(Elem *li){
     if(listaVazia(li)){
         printf("Não é possivel alocar memoria");
         exit(1);
@@ -93,7 +91,7 @@ Elem* insereListaInicio(Elem *li){
     }
 }
 /**Insere no ínicio*/
-Elem* insereListaOrdenada(Elem *li, int conta){
+void insereListaOrdenada(Elem *li, int conta){
 
 //    if(listaVazia(li)) {
 //        printf("Não é possivel alocar memoria");

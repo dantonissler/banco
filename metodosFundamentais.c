@@ -2,7 +2,7 @@
  * File:   metodosFundamentais.c
  * Author: Danton Issler Rodrigues
  *
- * Created on April 6, 2019, 2:45 PM
+ * Created on April 6, 2019, 2:47 AM
  */
 
 #include <stdio.h>
@@ -11,19 +11,16 @@
 #include "metodosInsercao.h"
 #include "metodosConsulta.h""
 
-
 /** */
-Elem* criaLista(Elem *li){
+void criaLista(Elem *li){
     li->prox = NULL;
     li->ant = NULL;
 }
 /** Metodo para verificar se a lista esta vazia*/
 int listaVazia(Elem *li){
-    if(li->prox == NULL)
-        return 1;
-    if(li->ant == NULL)
-        return 1;
-    return 0;
+    if(li->prox == NULL && li->ant == NULL)
+        return 0;
+    return 1;
 }
 /** */
 void liberaLista(Elem *li){
@@ -65,6 +62,6 @@ void tamanhoLista(Elem *li){
         }
         printf("Temos : ",cont," clientes cadastrados!\n\n");
     }else{
-        printf("O tamanho da lista é ZERO!\n\n");
+        printf("lista esta vazia!\n\n");
     }
 }

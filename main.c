@@ -2,7 +2,7 @@
  * File:   main.c
  * Author: Danton Issler Rodrigues
  *
- * Created on April 6, 2019, 2:45 PM
+ * Created on April 6, 2019, 2:48 AM
  */
 
 #include <stdio.h>
@@ -35,5 +35,4 @@ void main() {
     }
     /** Libera o espaço da memoria que o programa estava utilizando*/
     free(no);
-    exit(1);
 }
