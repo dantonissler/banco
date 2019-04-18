@@ -20,6 +20,5 @@ typedef struct banco Elem;
 
 void criaLista();
 void liberarLista(Elem *li);
-int encontraCliente(Elem *li, int conta);
 
 #endif // METODOSFUNTAMENTAIS_H_INCLUDED

@@ -43,7 +43,7 @@ void insereListaFinal(Elem* li){
         printf("Operação realizada com sucesso\n");
     }
 }
-/**Insere no ínicio*/
+/** Esta pendente Insere no ínicio*/
 void insereListaInicio(Elem *li){
     int cont = 1;
     /**Não pode ter contas repitidas.*/

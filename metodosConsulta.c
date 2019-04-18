@@ -42,3 +42,12 @@ void consultaListaCont(Elem *li, int conta){
         aux = li->prox;
     }
 }
+int encontraCliente(Elem *li, int conta){
+    Elem *aux = li->prox;
+    while(aux != NULL){
+        if(aux->numeroConta == conta) {
+            return 1;
+            aux = aux->prox;
+        }else return 0;
+    }
+}

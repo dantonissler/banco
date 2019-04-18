@@ -20,13 +20,15 @@
 ////    free(no);
 //    printf("Esta funcionalidade ainda nao foi implementada.");
 //}
-void removeListaFim(Elem *li){
+
+/**Falta colocar para remover pelo numero da conta.  fazer testes */
+void removeListaFim(Elem *li, conta){
     if(listaVazia(li)){
         printf("Nao existe elementos para remover");
         exit(1);
     }else{
         Elem *ultimo = li->prox, *penultimo = li->prox;
-        while(ultimo->prox!=NULL){
+        while(encontraCliente(li, conta)){
             penultimo=ultimo;
             ultimo=ultimo->prox;
         }

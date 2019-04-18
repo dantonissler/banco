@@ -36,6 +36,7 @@ int menuInicial(void){
 */
 void opcaoInicial(Elem *li, int op) {
     int op2 = 0;
+    int conta = 0;
     switch(op){
         case 0:
             /** Libera espaço alocado pela lista*/
@@ -50,7 +51,9 @@ void opcaoInicial(Elem *li, int op) {
             opcaoAdicao(li, op2);
             break;
         case 3:
-            removeListaFim(li);
+            printf("Informe o numero da conta: ");
+            scanf("%d", &conta);
+            removeListaFim(li, conta);
             break;
         case 4:
             liberaLista(li);

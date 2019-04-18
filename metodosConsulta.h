@@ -11,5 +11,6 @@
 
 void consultaListaPos(Elem *li, int posicao);
 void consultaListaCont(Elem *li, int conta);
+int encontraCliente(Elem *li, int conta);
 
 #endif // METODOSCONSULTA_H_INCLUDED
