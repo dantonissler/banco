@@ -19,8 +19,8 @@ void criaLista(Elem *li){
 /** Metodo para verificar se a lista esta vazia*/
 int listaVazia(Elem *li){
     if(li->prox == NULL && li->ant == NULL)
-        return 0;
-    return 1;
+        return 1;
+    return 0;
 }
 /** */
 void liberaLista(Elem *li){
@@ -43,17 +43,15 @@ void liberaLista(Elem *li){
 int encontraCliente(Elem *li, int conta){
     Elem *aux = li->prox;
     while(aux != NULL){
-        aux = li->prox;
-        if(aux->numeroConta == conta){
-            return 0;
-        }else{
-        return 1;
-        }
+        if(aux->numeroConta == conta) break;
+        aux = aux->prox;
+        if(aux->numeroConta == conta) return 1;
+        else return 0;
     }
 }
 
 void tamanhoLista(Elem *li){
-    int cont = NULL;
+    int cont = 0;
     if(!listaVazia(li)){
         Elem *aux = li->prox;
         while(aux != NULL){
@@ -61,7 +59,9 @@ void tamanhoLista(Elem *li){
             cont++;
         }
         printf("Temos : ",cont," clientes cadastrados!\n\n");
+        return;
     }else{
         printf("lista esta vazia!\n\n");
+        return;
     }
 }

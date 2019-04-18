@@ -107,3 +107,57 @@
 	<stdlib.h>
 	"metodosRemocao.h"
 
+1554609106 source:c:\users\temp\desktop\banco\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"metodosFuntamentais.h"
+	"metodosInsercao.h"
+	"metodosRemocao.h"
+	"metodosConsulta.h"
+
+1554606732 c:\users\temp\desktop\banco\menus.h
+
+1554607968 c:\users\temp\desktop\banco\metodosfuntamentais.h
+	"menus.h"
+
+1554608184 c:\users\temp\desktop\banco\metodosinsercao.h
+	"metodosFuntamentais.h"
+
+1554606762 c:\users\temp\desktop\banco\metodosremocao.h
+	"metodosFuntamentais.h"
+
+1554606766 c:\users\temp\desktop\banco\metodosconsulta.h
+	"metodosFuntamentais.h"
+
+1555465783 source:c:\users\temp\desktop\banco\metodosconsulta.c
+	<stdio.h>
+	<stdlib.h>
+	"metodosConsulta.h"
+
+1555465199 source:c:\users\temp\desktop\banco\metodosfundamentais.c
+	<stdio.h>
+	<stdlib.h>
+	"metodosFuntamentais.h"
+	"metodosInsercao.h"
+	"metodosConsulta.h"
+
+1555466152 source:c:\users\temp\desktop\banco\metodosinsercao.c
+	<stdio.h>
+	<stdlib.h>
+	"metodosFuntamentais.h"
+
+1554608976 source:c:\users\temp\desktop\banco\metodosremocao.c
+	<stdio.h>
+	<stdlib.h>
+	"metodosRemocao.h"
+
+1555464973 source:c:\users\temp\desktop\banco\menus.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+	"metodosFuntamentais.h"
+	"metodosInsercao.h"
+	"metodosRemocao.h"
+	"metodosConsulta.h"
+

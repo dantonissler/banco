@@ -36,6 +36,7 @@ int menuInicial(void){
 * pelo úsuario no menu inicial
 */
 void opcaoInicial(Elem *li, int op) {
+    int op2 = 0;
     switch(op){
         case 0:
             /** Libera espaço alocado pela lista*/
@@ -43,28 +44,22 @@ void opcaoInicial(Elem *li, int op) {
             break;
         case 1:
             /**Chamada da opção de adicionar elemento no inicio da lista*/
-            while( op != 0){
-                op = menuAdicao();
-                opcaoAdicao(li, op);
-            }
+
+            op2 = menuAdicao();
+            opcaoAdicao(li, op2);
+
             break;
         case 2:
-            while(op != 0){
-                op = menuRemocao();
-                opcaoAdicao(li,op);
-            }
+            removeListaFim(li);
             break;
         case 3:
-            while(op != 0){
-                op = menuConsulta();
-                opcaoConsulta(li,op);
-            }
+            consultarTodosElementos(li);
             break;
         case 4:
-                tamanhoLista(li);
+            tamanhoLista(li);
             break;
         case 5:
-                liberaLista(li);
+            liberaLista(li);
             break;
         default:
             printf("Comando invalido\n\n");
@@ -117,84 +112,84 @@ void opcaoAdicao(Elem *li, int op) {
             printf("Comando invalido\n\n");
     }
 }
-/**Metodo que imprime as opções de adição para o usuario*/
-int menuRemocao(void){
-    int opt;
-    printf("|----Menu para remover um cliente----|\n");
-    /** Opeções disponiveis*/
-    printf("0. Retornar ao menu anterior\n");
-    printf("1. Remover do ínicio\n");
-    printf("2. Remover um determinada posição\n");
-    printf("3. Remover do final\n");
-    printf("|------------------------------------|\n");
-    /** Captura da opção escolhida*/
-    scanf("%d", &opt);
-    return opt;
-}
-/**
-* Metodo para seleção da função conforme informado
-* pelo úsuario no menu inicial
-*/
-void opcaoRemocao(Elem *li, int op) {
-    int conta;
-    switch(op){
-        case 0:
-            /** Chama a tela do menu inicial*/
-            menuInicial();
-            break;
-        case 1:
-            removeListaInicio(li);
-            break;
-        case 2:
-            removeListaFim(li);
-            break;
-        case 3:
-
-            printf("informe o numero da conta: ");
-            scanf("%d", &conta);
-            removeListaMeio(li, conta);
-            break;
-        default:
-            printf("Comando invalido\n\n");
-    }
-}
-/**Metodo que imprime as opções de adição para o usuario*/
-int menuConsulta(void){
-    int opt;
-    printf("|----Menu para pesquisa de clientes----|\n");
-    /** Opeções disponiveis*/
-    printf("0. Retornar ao menu anterior\n");
-    printf("1. Consulta toda lista\n");
-    printf("2. Consulta pela posição do elemento\n");
-    printf("3. Consulta pelo número da conta\n");
-    printf("|--------------------------------------|\n");
-    /** Captura da opção escolhida*/
-    scanf("%d", &opt);
-    return opt;
-}
-/**
-* Metodo para seleção da função conforme informado
-* pelo úsuario no menu inicial
-*/
-void opcaoConsulta(Elem *li, int op) {
-    int conta;
-    switch(op){
-        case 0:
-            /** Chama a tela do menu inicial*/
-            menuInicial();
-            break;
-        case 1:
-            consultarTodosElementos(li);
-            break;
-        case 2:
-            printf("informe o numero da conta: ");
-            scanf("%d", &conta);
-            consultaListaCont(li, conta);
-            break;
-        case 3:
-            /**insereListaOrdenada(li, conta);*/
-            break;
-        default:
-            printf("Comando invalido\n\n");
-    }
-}
+///**Metodo que imprime as opções de adição para o usuario*/
+//int menuRemocao(void){
+//    int opt;
+//    printf("|----Menu para remover um cliente----|\n");
+//    /** Opeções disponiveis*/
+//    printf("0. Retornar ao menu anterior\n");
+//    printf("1. Remover do ínicio\n");
+//    printf("2. Remover um determinada posição\n");
+//    printf("3. Remover do final\n");
+//    printf("|------------------------------------|\n");
+//    /** Captura da opção escolhida*/
+//    scanf("%d", &opt);
+//    return opt;
+//}
+///**
+//* Metodo para seleção da função conforme informado
+//* pelo úsuario no menu inicial
+//*/
+//void opcaoRemocao(Elem *li, int op) {
+//    int conta;
+//    switch(op){
+//        case 0:
+//            /** Chama a tela do menu inicial*/
+//            menuInicial();
+//            break;
+//        case 1:
+//            removeListaInicio(li);
+//            break;
+//        case 2:
+//            removeListaFim(li);
+//            break;
+//        case 3:
+//
+//            printf("informe o numero da conta: ");
+//            scanf("%d", &conta);
+//            removeListaMeio(li, conta);
+//            break;
+//        default:
+//            printf("Comando invalido\n\n");
+//    }
+//}
+///**Metodo que imprime as opções de adição para o usuario*/
+//int menuConsulta(void){
+//    int opt;
+//    printf("|----Menu para pesquisa de clientes----|\n");
+//    /** Opeções disponiveis*/
+//    printf("0. Retornar ao menu anterior\n");
+//    printf("1. Consulta toda lista\n");
+//    printf("2. Consulta pela posição do elemento\n");
+//    printf("3. Consulta pelo número da conta\n");
+//    printf("|--------------------------------------|\n");
+//    /** Captura da opção escolhida*/
+//    scanf("%d", &opt);
+//    return opt;
+//}
+///**
+//* Metodo para seleção da função conforme informado
+//* pelo úsuario no menu inicial
+//*/
+//void opcaoConsulta(Elem *li, int op) {
+//    int conta;
+//    switch(op){
+//        case 0:
+//            /** Chama a tela do menu inicial*/
+//            menuInicial();
+//            break;
+//        case 1:
+//            consultarTodosElementos(li);
+//            break;
+//        case 2:
+//            printf("informe o numero da conta: ");
+//            scanf("%d", &conta);
+//            consultaListaCont(li, conta);
+//            break;
+//        case 3:
+//            /**insereListaOrdenada(li, conta);*/
+//            break;
+//        default:
+//            printf("Comando invalido\n\n");
+//    }
+//}

@@ -10,89 +10,87 @@
 #include "metodosFuntamentais.h"
 
 void insereListaFinal(Elem* li){
-    int cont = 1;
-    Elem *p = li;
-    /**Não pode ter contas repitidas.*/
-    if(listaVazia(li)){
-        printf("Não existe uma lista alocada!\n");
-        exit(1);
-    }
-    Elem* no = (Elem*) malloc(sizeof(Elem));
+     Elem* no =(Elem*) malloc(sizeof(Elem));
     if(!no){
-        printf("Memoria disponivel!\n");
-        exit(1);
-    }
-    if (listaVazia(li)){ /**Varificar se a lista é vazia: insere inicio*/
-        printf("Número da nova conta: ");
-        scanf("%d", &no->numeroConta);
-        while(encontraCliente(li, no->numeroConta)){
-            printf("Digite uma conta diferente, pois esta esta ja foi cadastrad:");
-            scanf("%d", &no->numeroConta);
-        }
-//      printf("Nome do cliente: ");
-//      scanf("%d", &no->nomeCliente); // Não consigo fazer o Array de car funcionar
-        printf("Valor do deposito inicial: ");
-        scanf("%d", &no->saldo);
-        no->prox = NULL;
-        no->ant = p;
-        p->prox = no;
-        printf("Primeira posição preenchida\n");
-    }else{
-        while(p->prox != NULL){
-            p = p->prox;
-            cont++;
-        }
-        printf("Número da nova conta: ");
-        scanf("%d", &no->numeroConta);
-    //    printf("Nome do cliente: ");
-    //    scanf("%d", &no->nomeCliente); // Não consigo fazer o Array de car funcionar
-        printf("Valor do deposito inicial: ");
-        scanf("%d", &no->saldo);
-        no->prox = NULL;
-        no->ant = p;
-        p->prox = no;
-        printf("Foi inserido o no ' = %i.\n", cont);
-    }
-}
-/**Insere no ínicio*/
-void insereListaInicio(Elem *li){
-    if(listaVazia(li)){
-        printf("Não é possivel alocar memoria");
-        exit(1);
-    }
-    Elem* no =(Elem*) malloc(sizeof(Elem));
-    if(listaVazia(no)){
         printf("Sem memoria disponivel!\n");
         exit(1);
     }
     printf("Número da nova conta: ");
+
     scanf("%d", &no->numeroConta);
-    while(encontraCliente(li, no->numeroConta)){
-        printf("Digite uma conta diferente, pois esta esta ja foi cadastrad:");
-        scanf("%d", &no->numeroConta);
-    }
+
+    //if(encontraCliente(li, no->numeroConta)){
+    //    printf("Digite uma conta diferente, pois esta esta ja foi cadastrada:");
+    //    return;
+    //}
+
     printf("Nome do cliente: ");
-    scanf("%d", &no->nomeCliente);
+    scanf("%s", &no->nomeCliente);
     printf("Valor do deposito inicial: ");
     scanf("%d", &no->saldo);
+
     no->ant = NULL;
+    no->prox = NULL;
     if (listaVazia(li)) {
-        li->ant = no;
-        li = no;
+        li->prox = no;
         printf("Operação realizada com sucesso\n");
     }else{
-        Elem *aux = li;
-        while(aux->ant != NULL){
-            aux = aux->ant;
-            aux->ant = no;
-            no->ant = aux;
+        Elem *aux = li->prox;
+        while(aux->prox != NULL){
+            aux = aux->prox;
         }
+        aux->prox = no;
+        no->ant = aux;
         printf("Operação realizada com sucesso\n");
     }
 }
 /**Insere no ínicio*/
-void insereListaOrdenada(Elem *li, int conta){
+void insereListaInicio(Elem *li){
+    int cont = 1;
+    /**Não pode ter contas repitidas.*/
+    Elem* no = (Elem*) malloc(sizeof(Elem));
+    if(!no){
+        printf("Memoria disponivel!\n");
+        return;
+    }
+    if(listaVazia(li)){ /**Varificar se a lista é vazia: insere inicio*/
+        printf("Número da nova conta: ");
+        scanf("%d", &no->numeroConta);
 
+        printf("Nome do cliente: ");
+        scanf("%s",no->nomeCliente); // Não consigo fazer o Array de car funcion
+
+        printf("Valor do deposito inicial: ");
+        scanf("%f", &no->saldo);
+
+        no->prox = NULL;
+        no->ant = NULL;
+        li->prox = no;
+        printf("Primeira posição preenchida\n");
+    }else{
+        while(li->prox != NULL){
+            li = li->prox;
+            cont++;
+        }
+        printf("Número da nova conta: ");
+        scanf("%d", &no->numeroConta);
+        while(encontraCliente(li, no->numeroConta)){
+            printf("Digite uma conta diferente, pois esta esta ja foi cadastra:");
+            scanf("%d", &no->numeroConta);
+        }
+        scanf("%d", &no->numeroConta);
+        printf("Nome do cliente: ");
+        scanf("%s", no->nomeCliente); // Não consigo fazer o Array de car funcionar
+        printf("Valor do deposito inicial: ");
+        scanf("%f", &no->saldo);
+        no->prox = NULL;
+        no->ant = li;
+        li->prox = no;
+        printf("Foi inserido o no ' = %i.\n", cont,"º");
+    }
+}
+///**Insere no ínicio*/
+//void insereListaOrdenada(Elem *li, int conta){
 //    if(listaVazia(li)) {
 //        printf("Não é possivel alocar memoria");
 //        exit(1);
@@ -127,5 +125,5 @@ void insereListaOrdenada(Elem *li, int conta){
 //                atual->ant = no;
 //        }
 //    }
-    printf("Esta funcao nao foi implementada ainda por gentileza aquarde\n");
-}
+//    printf("Esta funcao nao foi implementada ainda por gentileza aquarde\n");
+//}

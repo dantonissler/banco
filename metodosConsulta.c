@@ -15,14 +15,13 @@
 void consultarTodosElementos(Elem *li){
     Elem *aux = li->prox;
     while(aux != NULL){
-        aux = li->prox;
         printf("--------------------------------------\n");
-        printf("Numero da conta: ' = %i\n", li->numeroConta);
-        printf("Nome Cliente: ' = %i\n", li->nomeCliente);
-        printf("Saldo da conta: ' = %i\n", li->saldo);
-        printf("Saldo da conta: ' = %i\n", li->saldo);
-        printf("Anterior ' = %i\n", li->ant ,"Atual: ' = %i\n", aux ," Proximo: ' = %i\n", li->prox);
+        printf("Numero da conta: ' = %d\n", aux->numeroConta);
+        printf("Nome Cliente: ' = %s\n", aux->nomeCliente);
+        printf("Saldo da conta: ' = %f\n", aux->saldo);
+        printf("Anterior ' = %d Atual: ' = %d  Proximo: ' = %d\n", aux->ant, aux, aux->prox);
         printf("--------------------------------------\n");
+        aux = aux->prox;
     }
 }
 /**
@@ -31,7 +30,6 @@ void consultarTodosElementos(Elem *li){
 void consultaListaCont(Elem *li, int conta){
     Elem *aux = li->prox;
     while(aux != NULL){
-        aux = li->prox;
         printf("--------------------------------------\n");
         if(encontraCliente(li, aux->numeroConta)){
             printf("Numero da conta: ' = %i\n", li->numeroConta);
@@ -39,8 +37,8 @@ void consultaListaCont(Elem *li, int conta){
             printf("Saldo da conta: ' = %i\n", li->saldo);
             printf("Anterior ' = %i\n", li->ant ,"Atual: ' = %i\n", aux ," Proximo: ' = %i\n", li->prox);
             printf("--------------------------------------\n");
-        break;
+            printf("Cliente nao encontrado! \n");
         }
+        aux = li->prox;
     }
-
 }
