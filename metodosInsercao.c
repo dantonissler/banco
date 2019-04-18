@@ -15,20 +15,19 @@ void insereListaFinal(Elem* li){
         printf("Sem memoria disponivel!\n");
         exit(1);
     }
-    printf("Número da nova conta: ");
-
+    printf("Informe o numero da conta: ");
     scanf("%d", &no->numeroConta);
-
-    //if(encontraCliente(li, no->numeroConta)){
-    //    printf("Digite uma conta diferente, pois esta esta ja foi cadastrada:");
-    //    return;
-    //}
-
-    printf("Nome do cliente: ");
+    if(encontraCliente(li, no->numeroConta)){
+        printf("Digite uma conta diferente, pois esta esta ja foi cadastrada:");
+        while(encontraCliente(li, no->numeroConta)){
+            scanf("%d", &no->numeroConta);
+            printf("Digite uma conta diferente, pois esta esta ja foi cadastrada:");
+        }
+    }
+    printf("Informe o nome do cliente: ");
     scanf("%s", &no->nomeCliente);
-    printf("Valor do deposito inicial: ");
-    scanf("%d", &no->saldo);
-
+    printf("Informe o saldo do cliente: ");
+    scanf("%f", &no->saldo);
     no->ant = NULL;
     no->prox = NULL;
     if (listaVazia(li)) {
@@ -54,7 +53,7 @@ void insereListaInicio(Elem *li){
         return;
     }
     if(listaVazia(li)){ /**Varificar se a lista é vazia: insere inicio*/
-        printf("Número da nova conta: ");
+        printf("Numero da nova conta: ");
         scanf("%d", &no->numeroConta);
 
         printf("Nome do cliente: ");
@@ -66,13 +65,13 @@ void insereListaInicio(Elem *li){
         no->prox = NULL;
         no->ant = NULL;
         li->prox = no;
-        printf("Primeira posição preenchida\n");
+        printf("Primeira posicao preenchida\n");
     }else{
         while(li->prox != NULL){
             li = li->prox;
             cont++;
         }
-        printf("Número da nova conta: ");
+        printf("Numero da nova conta: ");
         scanf("%d", &no->numeroConta);
         while(encontraCliente(li, no->numeroConta)){
             printf("Digite uma conta diferente, pois esta esta ja foi cadastra:");
@@ -86,7 +85,7 @@ void insereListaInicio(Elem *li){
         no->prox = NULL;
         no->ant = li;
         li->prox = no;
-        printf("Foi inserido o no ' = %i.\n", cont,"º");
+        printf("Foi inserido o no ' = %dº.\n", cont);
     }
 }
 ///**Insere no ínicio*/

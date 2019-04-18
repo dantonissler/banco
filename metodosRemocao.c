@@ -8,59 +8,51 @@
 #include <stdlib.h>
 #include "metodosRemocao.h"
 
-void removeListaInicio(Elem *li){
-//    if(listaVazia(li)){
-//        printf("Não é possivel alocar memoria");
-//        exit(1);
-//    }
-//    Elem *no = *li;
-//    *li = no->prox;
-//    if(no->prox != NULL)
-//        no->prox->ant = NULL;
-//    free(no);
-    printf("Esta funcionalidade ainda nao foi implementada.");
-}
+//void removeListaInicio(Elem *li){
+////    if(listaVazia(li)){
+////        printf("Não é possivel alocar memoria");
+////        exit(1);
+////    }
+////    Elem *no = *li;
+////    *li = no->prox;
+////    if(no->prox != NULL)
+////        no->prox->ant = NULL;
+////    free(no);
+//    printf("Esta funcionalidade ainda nao foi implementada.");
+//}
 void removeListaFim(Elem *li){
     if(listaVazia(li)){
         printf("Nao existe elementos para remover");
         exit(1);
+    }else{
+        Elem *ultimo = li->prox, *penultimo = li->prox;
+        while(ultimo->prox!=NULL){
+            penultimo=ultimo;
+            ultimo=ultimo->prox;
+        }
+        penultimo->prox=NULL;
+        printf("Cliente %s removido com sucesso!", ultimo->nomeCliente);
     }
-    Elem *an = NULL;
-    Elem *pr = li->prox;
-
-    while(pr != NULL){
-        an = pr;
-        pr = pr->prox;
-    }
-    if(listaVazia(an)){
-        li = pr->prox;
-    } else{
-        pr->ant->prox = pr->prox;
-    }
-    if(pr->prox != NULL){
-        pr->ant->prox = pr->ant;
-    }
-    printf("Ultimo item removido");
 }
-void removeListaMeio(Elem *li, int conta){
-    if(listaVazia(li)){
-        printf("Nao existe elementos para remover");
-        exit(1);
-    }
-    Elem *an = NULL;
-    Elem *pr = li->prox;
-
-    while(pr != NULL && pr->numeroConta != conta){
-        an = pr;
-        pr = pr->prox;
-    }
-    if(listaVazia(an)){
-        li = pr->prox;
-    } else{
-        pr->ant->prox = pr->prox;
-    }
-    if(pr->prox != NULL){
-        pr->ant->prox = pr->ant;
-    }
-    printf("Item removido com sucesso");
-}
+//void removeListaMeio(Elem *li, int conta){
+//    if(listaVazia(li)){
+//        printf("Nao existe elementos para remover");
+//        exit(1);
+//    }
+//    Elem *an = NULL;
+//    Elem *pr = li->prox;
+//
+//    while(pr != NULL && pr->numeroConta != conta){
+//        an = pr;
+//        pr = pr->prox;
+//    }
+//    if(listaVazia(an)){
+//        li = pr->prox;
+//    } else{
+//        pr->ant->prox = pr->prox;
+//    }
+//    if(pr->prox != NULL){
+//        pr->ant->prox = pr->ant;
+//    }
+//    printf("Item removido com sucesso");
+//}

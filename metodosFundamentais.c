@@ -36,7 +36,7 @@ void liberaLista(Elem *li){
                 no = proxNo;
             }
         }
-        printf("Lista liberada!\n\n");
+        printf("Lista zerada com sucesso!\n\n");
     }
 }
 

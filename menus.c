@@ -19,11 +19,10 @@ int menuInicial(void){
     printf("|-------Menu inicial-------|\n");
     printf("   Escolha a opcao\n");
     printf("0. Sair\n");
-    printf("1. Adicionar novo cliente\n");
-    printf("2. Remover cliente\n");
-    printf("3. Consulta lista\n");
-    printf("4. Tamanho da lista\n");
-    printf("5. Zerar lista\n");
+    printf("1. Exibir lista\n");
+    printf("2. Adicionar novo cliente\n");
+    printf("3. Remover cliente\n");
+    printf("4. Zerar lista\n");
     printf("|--------------------------|\n");
     //printf("Opcao:'= %i.\n ", opt);
     printf("Opcao: ");
@@ -44,21 +43,16 @@ void opcaoInicial(Elem *li, int op) {
             break;
         case 1:
             /**Chamada da opção de adicionar elemento no inicio da lista*/
-
-            op2 = menuAdicao();
-            opcaoAdicao(li, op2);
-
-            break;
-        case 2:
-            removeListaFim(li);
-            break;
-        case 3:
             consultarTodosElementos(li);
             break;
-        case 4:
-            tamanhoLista(li);
+        case 2:
+            op2 = menuAdicao();
+            opcaoAdicao(li, op2);
             break;
-        case 5:
+        case 3:
+            removeListaFim(li);
+            break;
+        case 4:
             liberaLista(li);
             break;
         default:
@@ -74,7 +68,7 @@ int menuAdicao(void){
     printf("0. Retornar ao menu anterior\n");
     printf("1. Adicionar elemento no final da lista\n");
     printf("2. Adicionar elemento no inicio da lista\n");
-    printf("3. Adicionar elemento em uma posição\n");
+//    printf("3. Adicionar elemento em uma posição\n");
     printf("|---------------------------------------|\n");
     printf("Opcao: ");
     /** Captura da opção escolhida*/
@@ -101,13 +95,13 @@ void opcaoAdicao(Elem *li, int op) {
             /**Chamada da opção de adicionar elemento no inicio da lista*/
             insereListaInicio(li);
             break;
-        case 3:
-            /**insereListaOrdenada(li, conta)*/
+//        case 3:
+//            /**insereListaOrdenada(li, conta)*/
 //            printf("informe a posicao: ");
 //            scanf("%d", &opcao);
-            insereListaOrdenada(li, opcao);
-            /**Chamada da opção de adicionar elemento no inicio da lista*/
-            break;
+//            insereListaOrdenada(li, opcao);
+//            /**Chamada da opção de adicionar elemento no inicio da lista*/
+//            break;
         default:
             printf("Comando invalido\n\n");
     }
