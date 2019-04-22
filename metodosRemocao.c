@@ -4,57 +4,25 @@
  *
  * Created on April 6, 2019, 2:48 AM
  */
-#include <stdio.h>
-#include <stdlib.h>
+
 #include "metodosRemocao.h"
-
-//void removeListaInicio(Elem *li){
-////    if(listaVazia(li)){
-////        printf("Não é possivel alocar memoria");
-////        exit(1);
-////    }
-////    Elem *no = *li;
-////    *li = no->prox;
-////    if(no->prox != NULL)
-////        no->prox->ant = NULL;
-////    free(no);
-//    printf("Esta funcionalidade ainda nao foi implementada.");
-//}
-
-/**Falta colocar para remover pelo numero da conta.  fazer testes */
-void removeListaFim(Elem *li, conta){
+void removeConta(Elem *li, int cliente){
+    Elem* ant = NULL;
+    Elem* aux = li;
     if(listaVazia(li)){
-        printf("Nao existe elementos para remover");
-        exit(1);
-    }else{
-        Elem *ultimo = li->prox, *penultimo = li->prox;
-        while(encontraCliente(li, conta)){
-            penultimo=ultimo;
-            ultimo=ultimo->prox;
-        }
-        penultimo->prox=NULL;
-        printf("Cliente %s removido com sucesso!", ultimo->nomeCliente);
+        while((aux != NULL) && (aux->nomeCliente != cliente)) {
+            ant = aux;
+            aux = aux->prox;
+         }
+         if(aux == NULL)
+            printf("Tentou remover de uma lista vazia\n");
+        if(ant == NULL)
+            li = aux->prox;
+        else
+            ant->prox = aux->prox;
+        free(aux);
+        printf("Cliente %d excluido com sucesso\n", li->nomeCliente);
+    }else {
+        printf("Tentou remover de uma lista vazia\n");
     }
 }
-//void removeListaMeio(Elem *li, int conta){
-//    if(listaVazia(li)){
-//        printf("Nao existe elementos para remover");
-//        exit(1);
-//    }
-//    Elem *an = NULL;
-//    Elem *pr = li->prox;
-//
-//    while(pr != NULL && pr->numeroConta != conta){
-//        an = pr;
-//        pr = pr->prox;
-//    }
-//    if(listaVazia(an)){
-//        li = pr->prox;
-//    } else{
-//        pr->ant->prox = pr->prox;
-//    }
-//    if(pr->prox != NULL){
-//        pr->ant->prox = pr->ant;
-//    }
-//    printf("Item removido com sucesso");
-//}

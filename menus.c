@@ -4,13 +4,7 @@
  *
  * Created on April 6, 2019, 2:47 AM
  */
-#include <stdio.h>
-#include <stdlib.h>
 #include "menus.h"
-#include "metodosFuntamentais.h"
-#include "metodosInsercao.h"
-#include "metodosRemocao.h"
-#include "metodosConsulta.h"
 
 /**Metodo que imprime as opções iniciais para o usuario*/
 int menuInicial(void){
@@ -40,7 +34,8 @@ void opcaoInicial(Elem *li, int op) {
     switch(op){
         case 0:
             /** Libera espaço alocado pela lista*/
-            liberaLista(li);
+            liberarLista(li);
+            exit(1);
             break;
         case 1:
             /**Chamada da opção de adicionar elemento no inicio da lista*/
@@ -53,10 +48,11 @@ void opcaoInicial(Elem *li, int op) {
         case 3:
             printf("Informe o numero da conta: ");
             scanf("%d", &conta);
-            removeListaFim(li, conta);
+            removeConta(li, conta);
             break;
         case 4:
-            liberaLista(li);
+            liberarLista(li);
+            printf("Lista liberada com sucesso\n\n");
             break;
         default:
             printf("Comando invalido\n\n");

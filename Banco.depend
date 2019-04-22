@@ -53,58 +53,44 @@
 1554068396 c:\projetos\banco\metodosremocao.h
 	"metodosFuntamentais.h"
 
-1554609106 source:c:\users\danto\onedrive\햞ea de trabalho\banco\main.c
-	<stdio.h>
-	<stdlib.h>
+1555797533 source:c:\users\danto\onedrive\햞ea de trabalho\banco\main.c
 	"menus.h"
+	"metodosInsercao.h"
+	"metodosRemocao.h"
+	"metodosConsulta.h"
+
+1555796286 c:\users\danto\onedrive\햞ea de trabalho\banco\menus.h
 	"metodosFuntamentais.h"
 	"metodosInsercao.h"
 	"metodosRemocao.h"
 	"metodosConsulta.h"
 
-1554606732 c:\users\danto\onedrive\햞ea de trabalho\banco\menus.h
-
-1555551526 c:\users\danto\onedrive\햞ea de trabalho\banco\metodosfuntamentais.h
-	"menus.h"
+1555900344 c:\users\danto\onedrive\햞ea de trabalho\banco\metodosfuntamentais.h
+	<stdio.h>
+	<stdlib.h>
 
 1554608184 c:\users\danto\onedrive\햞ea de trabalho\banco\metodosinsercao.h
 	"metodosFuntamentais.h"
 
-1554606762 c:\users\danto\onedrive\햞ea de trabalho\banco\metodosremocao.h
+1555888592 c:\users\danto\onedrive\햞ea de trabalho\banco\metodosremocao.h
 	"metodosFuntamentais.h"
 
-1555551525 c:\users\danto\onedrive\햞ea de trabalho\banco\metodosconsulta.h
+1555796313 c:\users\danto\onedrive\햞ea de trabalho\banco\metodosconsulta.h
 	"metodosFuntamentais.h"
 
-1555550375 source:c:\users\danto\onedrive\햞ea de trabalho\banco\menus.c
-	<stdio.h>
-	<stdlib.h>
+1555900359 source:c:\users\danto\onedrive\햞ea de trabalho\banco\menus.c
 	"menus.h"
+
+1555892799 source:c:\users\danto\onedrive\햞ea de trabalho\banco\metodosconsulta.c
+	"metodosConsulta.h"
+
+1555900528 source:c:\users\danto\onedrive\햞ea de trabalho\banco\metodosfundamentais.c
 	"metodosFuntamentais.h"
+
+1555899133 source:c:\users\danto\onedrive\햞ea de trabalho\banco\metodosinsercao.c
 	"metodosInsercao.h"
-	"metodosRemocao.h"
-	"metodosConsulta.h"
 
-1555546750 source:c:\users\danto\onedrive\햞ea de trabalho\banco\metodosconsulta.c
-	<stdio.h>
-	<stdlib.h>
-	"metodosConsulta.h"
-
-1555551525 source:c:\users\danto\onedrive\햞ea de trabalho\banco\metodosfundamentais.c
-	<stdio.h>
-	<stdlib.h>
-	"metodosFuntamentais.h"
-	"metodosInsercao.h"
-	"metodosConsulta.h"
-
-1555551114 source:c:\users\danto\onedrive\햞ea de trabalho\banco\metodosinsercao.c
-	<stdio.h>
-	<stdlib.h>
-	"metodosFuntamentais.h"
-
-1555551047 source:c:\users\danto\onedrive\햞ea de trabalho\banco\metodosremocao.c
-	<stdio.h>
-	<stdlib.h>
+1555889171 source:c:\users\danto\onedrive\햞ea de trabalho\banco\metodosremocao.c
 	"metodosRemocao.h"
 
 1554609106 source:c:\users\temp\desktop\banco\main.c

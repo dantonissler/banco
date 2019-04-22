@@ -4,11 +4,7 @@
  *
  * Created on April 6, 2019, 2:48 AM
  */
-
-#include <stdio.h>
-#include <stdlib.h>
 #include "menus.h"
-#include "metodosFuntamentais.h"
 #include "metodosInsercao.h"
 #include "metodosRemocao.h"
 #include "metodosConsulta.h""

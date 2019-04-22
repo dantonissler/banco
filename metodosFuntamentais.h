@@ -7,7 +7,8 @@
 
 #ifndef METODOSFUNTAMENTAIS_H_INCLUDED
 #define METODOSFUNTAMENTAIS_H_INCLUDED
-#include "menus.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 struct banco{
     struct banco *ant;

@@ -9,8 +9,6 @@
 #define METODOSREMOCAO_H_INCLUDED
 #include "metodosFuntamentais.h"
 
-void removeListaFim(Elem *li);
-void removeListaMeio(Elem *li, int conta);
-void removeListaInicio(Elem *li);
+void removeConta(Elem *li, int cliente);
 
 #endif // METODOSREMOCAO_H_INCLUDED

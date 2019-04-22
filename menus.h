@@ -7,6 +7,10 @@
 
 #ifndef MENUS_H_INCLUDED
 #define MENUS_H_INCLUDED
+#include "metodosFuntamentais.h"
+#include "metodosInsercao.h"
+#include "metodosRemocao.h"
+#include "metodosConsulta.h"
 
 typedef struct banco Elem;
 void criaLista(Elem *li);
